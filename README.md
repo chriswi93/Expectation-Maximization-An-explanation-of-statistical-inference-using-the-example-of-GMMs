@@ -1,10 +1,16 @@
+{% raw %}{::nomarkdown}
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+<div>
+$$
+ \newcommand{\lolli}{\multimap}
+ $$
+ </div>
+{:/}{% endraw %}
+
+
 # Gaussian Mixture Model parameter inference using Expectation Maximization
 
 ```python
 print("Hello World")
 ```
- {% raw %} 
- 	
-$$a^2 + b^2 = c^2$$--> note that all equations between these tags will not need escaping!	
-
- {% endraw %} 
