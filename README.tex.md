@@ -4,11 +4,6 @@
 print("Hello World")
 ```
 
-{::nomarkdown}
+{% jupyter_notebook "sample.ipynb" %}
 
-$$
-\sqrt{3x-1}+(1+x)^2
-$$
-
-{:/}
 
