@@ -4,10 +4,11 @@
 print("Hello World")
 ```
 
+{::nomarkdown}
 
-This is a expression 
-```HTML
 $$
 \sqrt{3x-1}+(1+x)^2
 $$
-```
+
+{:/}
+
