@@ -3,8 +3,7 @@
 ```python
 print("Hello World")
 ```
-{% raw %}
-<p align="center"><img src="/tex/eec5713a36c954c2630d087e912385e3.svg?invert_in_darkmode&sanitize=true" align=middle width=86.16804239999999pt height=15.572667pt/></p> --> note that all equations between these tags will not need escaping! 
-{% endraw %}
+
+<img src="/tex/029dd5592fc71463c3d448e1a8a51e83.svg?invert_in_darkmode&sanitize=true" align=middle width=126.36409994999998pt height=27.77565449999998pt/>
 
 
