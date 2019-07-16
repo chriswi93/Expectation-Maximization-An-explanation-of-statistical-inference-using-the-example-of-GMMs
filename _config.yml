@@ -1,5 +1,3 @@
 theme: jekyll-theme-cayman
 title: Gaussian Mixture Model parameter inference using Expectation Maximization
-kramdown:
-  math_engine: mathjax
 mathjax: true
