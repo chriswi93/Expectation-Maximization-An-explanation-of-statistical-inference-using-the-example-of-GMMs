@@ -5,12 +5,10 @@ Clustering forms a group of unsupervised learning algorithms that are designed f
 In this article the Expectation Maximization algorithm is explained and discussed in simple words as a fundamental principal of statistical inference. Afterwards an implementation of the concept is presented in Python using the example of univariate Gaussian Mixture Models. The article is written for researchers and practitioners with a fundamental understanding of Machine Learning and Statistics.
 
 <h2>Expectation Maximization Clustering</h2>
-EM Clustering is a method to adress the issue of hard assignment. It adds the statistical assumption that every data point <i>x<sub>i</sub></i> is randomly drawn from a distribution. In Gaussian Mixture Models the underlying assumption is a normal distribution. Therefore, every cluster <i>k<sub>i</sub></i> out of <i>K</i> clusters equals a normal distribution with the expected value &mu;<sub>k</sub> and variance &sigma;<sup>2</sup><sub>k</sub>. We formally write:
-<br>
-<i>
+EM Clustering is a method to adress the issue of hard assignment. It adds the statistical assumption that every data point <i>x<sub>i</sub></i> is randomly drawn from a distribution. In Gaussian Mixture Models the underlying assumption is a normal distribution. Therefore, every cluster <i>k<sub>i</sub></i> out of <i>K</i> clusters equals a normal distribution with the expected value &mu;<sub>k</sub> and variance &sigma;<sup>2</sup><sub>k</sub>. Therefore, we formally write:
+<p align="center"><i>
   x<sub>i</sub> ~ N(&mu;<sub>k</sub>,&sigma;<sup>2</sup><sub>k</sub>)
-</i>
-<br>
+</i></p>
 <i>K</i> is a hyperparameter of the model. A <b>hyperparameter</b> is a constant that has to be defined before inferencing the model parameters. Usually a hyperparameter does not change during inference. However, a <b>model parameter</b> is not known in advance. It has to be estimated. In many cases model parameters are randomly initialized before parameter inference.
 
 Every normal distribution is 
