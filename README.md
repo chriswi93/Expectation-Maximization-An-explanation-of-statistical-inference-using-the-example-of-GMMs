@@ -9,8 +9,12 @@ EM Clustering is a method to adress the issue of hard assignment. It adds the st
 <p align="center"><i>
   x<sub>i</sub> ~ N(&mu;<sub>k</sub>,&sigma;<sup>2</sup><sub>k</sub>)
 </i></p>
-<i>K</i> is a hyperparameter of the model. A <b>hyperparameter</b> is a constant that has to be defined before inferencing the model parameters. Usually a hyperparameter does not change during inference. However, a <b>model parameter</b> is not known in advance. It has to be estimated. In many cases model parameters are randomly initialized before parameter inference.
+<i>K</i> is a hyperparameter of the model. A <b>hyperparameter</b> is a constant that has to be defined before inferencing the model parameters. Usually a hyperparameter does not change during training. However, a <b>model parameter</b> is not known in advance. It has to be estimated during inference. In many cases model parameters are randomly initialized.
 
-Every normal distribution is 
+A very important condition of the Expectation Maximization algorithm is that the <b>probability density function (pdf)</b> of the a posteriori distribution is known and available in closed form. The probability density function of the posterior distribution in univariate Gaussian Mixture Models is the probability density function of the univariate normal distribution: 
+<p align="center"><i>
+  
+</i></p>
+Expectation Maximization computes a point estimate of the actual posterior distribution. However, the function that is optimized during inference is non-convex. The properties of a non-convex function conclude that a found optimum is not guaranteed to be the global optimum. This condition is one of many aspects that differentiates Expectation Maximization from Variational Inference where the a posteriori distribution is not known beforehand and is usually very complex.
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{W}(A,f)&space;=&space;(T,\bar{f})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{W}(A,f)&space;=&space;(T,\bar{f})" title="\mathcal{W}(A,f) = (T,\bar{f})" /></a>
