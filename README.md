@@ -12,10 +12,14 @@ EM Clustering is a method to adress the issue of hard assignment. It adds the st
 </p>
 
 <p align="center">
+<a href="https://www.codecogs.com/eqnedit.php?latex=z_{i}&space;\sim&space;Categorial(\frac{1}{K},...,\frac{1}{K})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?z_{i}&space;\sim&space;Categorial(\frac{1}{K},...,\frac{1}{K})" title="z_{i} \sim Categorial(\frac{1}{K},...,\frac{1}{K})" /></a>
+</p>
+
+<p align="center">
 <a href="https://www.codecogs.com/eqnedit.php?latex=x_{i}|z_{i},&space;\mathbf{\mu}\sim&space;N(\mu_{k},\sigma_k^2)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x_{i}|z_{i},&space;\mathbf{\mu}\sim&space;N(\mu_{k},\sigma_k^2)" title="x_{i}|z_{i}, \mathbf{\mu}\sim N(\mu_{k},\sigma_k^2)" /></a>
 </p>
 
-<i>K</i> is a hyperparameter of the model. A <b>hyperparameter</b> is a constant that has to be defined before inferencing the model parameters. Usually a hyperparameter does not change during training. However, a <b>model parameter</b> is not known in advance. It has to be estimated during inference. In many cases model parameters are randomly initialized. <b>x</b> equals the observed variable of the model and <b>&Phi;</b> is a <i>K</i> dimensional vector that equals the prior probability a data point <i>x<sub>i</sub></i> is assigned to a cluster <i>z<sub>i</sub></i>. This is also a hyperparameter. For simplicity we set <i>&Phi;<sub>k</sub> = 1/K</i> for <i>k&isin;K</i>. The algorithm optimizes the probability that every <i>x<sub>i</sub></i> is assigned to cluster <i>z<sub>i</sub></i> with a overall high likelihood of the model parameters given the observed data <i>p(&Phi;|x)</i>.
+<i>K</i> is a hyperparameter of the model and determines the number of clusters which is fixed. A <b>hyperparameter</b> is a constant that has to be defined before inferencing the model parameters. Usually a hyperparameter does not change during training. However, a <b>model parameter</b> is not known in advance. It has to be estimated during inference. In many cases model parameters are randomly initialized. <b>x</b> is the observed variable of the model and <b>&Phi;</b> is a <i>K</i> dimensional vector. It describes the prior probability assumption that a data point <i>x<sub>i</sub></i> is generated from a cluster <i>z<sub>i</sub></i>. This is also a hyperparameter. For simplicity we set <i>&Phi;<sub>k</sub> = 1/K</i> for <i>k&isin;K</i>. The algorithm optimizes the probability that every <i>x<sub>i</sub></i> is assigned to cluster <i>z<sub>i</sub></i> with a overall high likelihood of the model parameters given the observed data <i>p(&Phi;|x)</i>.
 
 A very important condition of the Expectation Maximization algorithm is that the <b>probability density function (pdf)</b> of the a posteriori distribution is known and available in closed form. This is one of many aspects that differentiates Expectation Maximization from Variational Inference. The probability density function of the posterior distribution in univariate Gaussian Mixture Models is the probability density function of the univariate normal distribution: 
 <p align="center">
