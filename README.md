@@ -1,20 +1,18 @@
 <h1>Parameter Inference of Gaussian Mixture Models using Expectation Maximization</h1>
 
-Clustering forms a group of unsupervised learning algorithms that are designed for finding unknown patterns in data. It is a fundamental part of many researches and practitioners working with data. K-Means is one of the best known and easiest clustering methods used today. The algorithm uses hard assignment to assign a data point to exactly one cluster. However, the lack of in-between assignment often leads to issues regarding overlapping clusters. 
+Clustering forms a group of unsupervised learning algorithms that are designed for finding unknown patterns in data. It is a fundamental part for many researches and practitioners working with data. K-Means is one of the best known and easiest clustering methods used today. The algorithm uses hard assignment to assign a data point to exactly one cluster. However, the lack of in-between assignment often leads to issues regarding overlapping clusters. 
 
 In this article the Expectation Maximization algorithm is explained and discussed in simple words as a fundamental principal of statistical inference. Afterwards an implementation of the concept is presented in Python using the example of univariate Gaussian Mixture Models. The article is written for researchers and practitioners with a fundamental understanding of Machine Learning and Statistics.
 
 <h2>Expectation Maximization Clustering</h2>
 EM Clustering is a method to adress the issue of hard assignment. It adds the statistical assumption that every data point <i>x<sub>i</sub></i> is randomly drawn from a distribution. In Gaussian Mixture Models the underlying assumption is a normal distribution. Therefore, every cluster <i>k<sub>i</sub></i> out of <i>K</i> clusters equals a normal distribution with the expected value &mu;<sub>k</sub> and variance &sigma;<sup>2</sup><sub>k</sub>. Therefore, we formally write:
-<p align="center"><i>
-  x<sub>i</sub> ~ N(&mu;<sub>k</sub>,&sigma;<sup>2</sup><sub>k</sub>)
-</i></p>
-<i>K</i> is a hyperparameter of the model. A <b>hyperparameter</b> is a constant that has to be defined before inferencing the model parameters. Usually a hyperparameter does not change during training. However, a <b>model parameter</b> is not known in advance. It has to be estimated during inference. In many cases model parameters are randomly initialized.
+<p align="center">
+<a href="https://www.codecogs.com/eqnedit.php?latex=x_{i}\sim&space;N(\mu_{k},\sigma_k^2)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x_{i}\sim&space;N(\mu_{k},\sigma_k^2)" title="x_{i}\sim N(\mu_{k},\sigma_k^2)" /></a>
+</p>
+<i>K</i> is a hyperparameter of the model. A <b>hyperparameter</b> is a constant that has to be defined before inferencing the model parameters. Usually a hyperparameter does not change during training. However, a <b>model parameter</b> is not known in advance. It has to be estimated during inference. In many cases model parameters are randomly initialized. Another relevant aspect is that <b>x</b> equals the observed variable of the model. <b>&Phi;</b> is a <i>K</i> dimensional vector and equals the prior probability a data point <i>x<sub>i</sub></i> is assigned to a cluster. This is also a hyperparameter. For simplicity we set &Phi;<sub>k</sub> = 1/K for k &isin; K. The algorithm optimizes the probability that every <i>x<sub>i</sub></i> is assigned to cluster <i>z<sub>i</sub></i> with a overall high likelihood.
 
-A very important condition of the Expectation Maximization algorithm is that the <b>probability density function (pdf)</b> of the a posteriori distribution is known and available in closed form. The probability density function of the posterior distribution in univariate Gaussian Mixture Models is the probability density function of the univariate normal distribution: 
-<p align="center"><i>
-  
-</i></p>
-Expectation Maximization computes a point estimate of the actual posterior distribution. However, the function that is optimized during inference is non-convex. The properties of a non-convex function conclude that a found optimum is not guaranteed to be the global optimum. This condition is one of many aspects that differentiates Expectation Maximization from Variational Inference where the a posteriori distribution is not known beforehand and is usually very complex.
-
-<a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{W}(A,f)&space;=&space;(T,\bar{f})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{W}(A,f)&space;=&space;(T,\bar{f})" title="\mathcal{W}(A,f) = (T,\bar{f})" /></a>
+A very important condition of the Expectation Maximization algorithm is that the <b>probability density function (pdf)</b> of the a posteriori distribution is known and available in closed form. This is one of many aspects that differentiates Expectation Maximization from Variational Inference. The probability density function of the posterior distribution in univariate Gaussian Mixture Models is the probability density function of the univariate normal distribution: 
+<p align="center">
+  <a href="https://www.codecogs.com/eqnedit.php?latex=p(x)=\frac{1}{\sqrt{2\pi&space;\sigma^{2}}}e^{-\frac{(x-\mu)^2}{2&space;\sigma^2}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p(x)=\frac{1}{\sqrt{2\pi&space;\sigma^{2}}}e^{-\frac{(x-\mu)^2}{2&space;\sigma^2}}" title="p(x)=\frac{1}{\sqrt{2\pi \sigma^{2}}}e^{-\frac{(x-\mu)^2}{2 \sigma^2}}" /></a>
+</p>
+Expectation Maximization computes a point estimate of the actual posterior distribution. However, the function that is optimized during inference is non-convex. The properties of a non-convex function conclude that a found optimum is not guaranteed to be the global optimum. Therefore, the objective of the EM algorithm is to find a maximum likelihood estimate for the parameters of the model. It learns a local optimal solution for the latent variables &Phi; to use observed variables <b>x</b>
