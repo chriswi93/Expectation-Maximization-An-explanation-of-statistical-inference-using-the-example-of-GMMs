@@ -5,7 +5,7 @@ Clustering forms a group of unsupervised learning algorithms that are designed f
 In this article the Expectation Maximization algorithm is explained and discussed in simple words as a fundamental principal of statistical inference. Afterwards an implementation of the concept is presented in Python using the example of univariate Gaussian Mixture Models. The article is written for researchers and practitioners with a fundamental understanding of Machine Learning and Statistics.
 
 <h2>Expectation Maximization Clustering</h2>
-EM Clustering is a method to adress the issue of hard assignment. It adds the statistical assumption that every data point <i>x<sub>i</sub></i> is randomly drawn from a distribution. In Gaussian Mixture Models the underlying assumption is a normal distribution. Therefore, every cluster <i>k<sub>i</sub></i> out of <i>K</i> clusters equals a normal distribution with the expected value &mu;<sub>k</sub> and variance &sigma;<sup>2</sup><sub>k</sub>. Therefore, we formally write:
+EM Clustering is a method to adress the issue of hard assignment. It adds the statistical assumption that every data point <i>x<sub>i</sub></i> is randomly drawn from a distribution. In Gaussian Mixture Models the underlying assumption is a normal distribution. Therefore, every cluster <i>k<sub>i</sub></i> out of <i>K</i> clusters equals a normal distribution with the expected value &mu;<sub>k</sub> and variance &sigma;<sup>2</sup><sub>k</sub>. Blei et al. (2016) formally write:
 
 <p align="center">
 <a href="https://www.codecogs.com/eqnedit.php?latex=\mu_{k}&space;\sim&space;N(0,\sigma^2)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mu_{k}&space;\sim&space;N(0,\sigma^2)" title="\mu_{k} \sim N(0,\sigma^2)" /></a>
