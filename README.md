@@ -8,15 +8,15 @@ In this article the Expectation Maximization algorithm is explained and discusse
 EM Clustering is a method to adress the issue of hard assignment. It adds the statistical assumption that every data point <i>x<sub>i</sub></i> is randomly drawn from a distribution. In Gaussian Mixture Models the underlying assumption is a normal distribution. Therefore, every cluster <i>k<sub>i</sub></i> out of <i>K</i> clusters equals a normal distribution with mean &mu;<sub>k</sub>. For simplicity the variance &sigma;<sup>2</sup> is set to 1. Blei et al. (2016) formally write:
 
 <p align="center">
-<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\mu_{k}&space;\sim&space;N(0,\sigma^2)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mu_{k}&space;\sim&space;N(0,\sigma^2)" title="\mu_{k} \sim N(0,\sigma^2)" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\mu_{k}&space;\sim&space;N(0,\sigma^2)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\mu_{k}&space;\sim&space;N(0,\sigma^2)" title="\mu_{k} \sim N(0,\sigma^2)" /></a>
 </p>
 
 <p align="center">
-<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;z_{i}&space;\sim&space;Categorial(\frac{1}{K},...,\frac{1}{K})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?z_{i}&space;\sim&space;Categorial(\frac{1}{K},...,\frac{1}{K})" title="z_{i} \sim Categorial(\frac{1}{K},...,\frac{1}{K})" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;z_{i}&space;\sim&space;Categorial(\frac{1}{K},...,\frac{1}{K})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;z_{i}&space;\sim&space;Categorial(\frac{1}{K},...,\frac{1}{K})" title="z_{i} \sim Categorial(\frac{1}{K},...,\frac{1}{K})" /></a>
 </p>
 
 <p align="center">
-<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;x_{i}|z_{i},&space;\mu&space;\sim&space;N(z_i^T,\mu,1)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x_{i}|z_{i},&space;\mu&space;\sim&space;N(z_i^T,\mu,1)" title="x_{i}|z_{i}, \mu \sim N(z_i^T,\mu,1)" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;x_{i}|z_{i},&space;\mu&space;\sim&space;N(z_i^T,\mu,1)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;x_{i}|z_{i},&space;\mu&space;\sim&space;N(z_i^T,\mu,1)" title="x_{i}|z_{i}, \mu \sim N(z_i^T,\mu,1)" /></a>
 </p>
 
 <i>K</i> is a hyperparameter of the model and determines the number of clusters which is fixed. A <b>hyperparameter</b> is a constant that has to be defined before inferring the model parameters. Usually a hyperparameter does not change during training. However, a <b>model parameter</b> is not known before. It has to be estimated during inference. In many cases model parameters are randomly initialized. <b>x</b> is the observed data which depends on cluster assignment <i>z<sub>i</sub></i> and the mean &Mu;. <b>&Phi;</b> is a <i>K</i> dimensional vector of a categorial distribution. It encodes the prior probability assumption that a data point <i>x<sub>i</sub></i> was generated from a certain cluster <i>z<sub>i</sub></i>. This is also a hyperparameter. For simplicity it is set to <i>&Phi;<sub>k</sub> = 1/K</i> for <i>k &isin; K</i>. 
