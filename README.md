@@ -51,9 +51,9 @@ In the next step the model parameters (&Mu; and &sigma;) are updated. The prior 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\mu_{k}&space;=&space;\frac{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})x_{i}}{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\mu_{k}&space;=&space;\frac{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})x_{i}}{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})}" title="\mu_{k} = \frac{\sum_{i=1}^{N}p(x_{i}|\mu_{k}, \sigma^2_{k})x_{i}}{\sum_{i=1}^{N}p(x_{i}|\mu_{k}, \sigma^2_{k})}" /></a>
 </p>
 
-The updated value for &Mu; is the weighted average of all data points <i>x<sub>i</sub></i> that are assigned to cluster <i>k</i>.
-
 <p align="center">
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\sigma_{k}&space;=&space;\sqrt{\frac{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})(x_{i}-\mu_{k})^2}{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\sigma_{k}&space;=&space;\sqrt{\frac{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})(x_{i}-\mu_{k})^2}{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})}}" title="\sigma_{k} = \sqrt{\frac{\sum_{i=1}^{N}p(x_{i}|\mu_{k}, \sigma^2_{k})(x_{i}-\mu_{k})^2}{\sum_{i=1}^{N}p(x_{i}|\mu_{k}, \sigma^2_{k})}}" /></a>
 </p>
+
+The updated value for &Mu; is the weighted average of all data points <i>x<sub>i</sub></i> that are assigned to cluster <i>k</i>. Similar the updated value for &sigma; is also computed by using the probabilities as weights.
 
