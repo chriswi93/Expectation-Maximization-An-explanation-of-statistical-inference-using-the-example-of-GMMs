@@ -107,4 +107,4 @@ Last step is to update the model parameters (M-Step). These are the new estimate
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\sigma_{2}&space;=&space;\sqrt{\frac{0.17*(3-5)^2&plus;0.95*(4.5-5)^2}{0.18&plus;0.95}}=0.82" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\sigma_{2}&space;=&space;\sqrt{\frac{0.17*(3-5)^2&plus;0.95*(4.5-5)^2}{0.18&plus;0.95}}=0.82" title="\sigma_{2} = \sqrt{\frac{0.17*(3-5)^2+0.95*(4.5-5)^2}{0.18+0.95}}=0.82" /></a>
 </p>
 
-In practice the E-Step and M-Step are repeated several times. It is guaranteed that the parameters converge to a stationary point.
+In practice both steps are repeated several times. It is guaranteed that the parameters converge to a stationary point.
