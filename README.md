@@ -47,4 +47,11 @@ In the numerator the prior expectation of the cluster assignment is multiplied b
 <h3>M-Step</h3>
 In the next step the model parameters (&Mu; and &sigma;) are updated. The prior expectation of the cluster assignment is usually fixed, but could also be updated by computing the average of each row in the table above. 
 
+<p align="center">
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\mu_{k}&space;=&space;\frac{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})x_{i}}{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\mu_{k}&space;=&space;\frac{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})x_{i}}{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})}" title="\mu_{k} = \frac{\sum_{i=1}^{N}p(x_{i}|\mu_{k}, \sigma^2_{k})x_{i}}{\sum_{i=1}^{N}p(x_{i}|\mu_{k}, \sigma^2_{k})}" /></a>
+</p>
+
+<p align="center">
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\sigma_{k}&space;=&space;\sqrt{\frac{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})(x_{i}-\mu_{k})^2}{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\sigma_{k}&space;=&space;\sqrt{\frac{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})(x_{i}-\mu_{k})^2}{\sum_{i=1}^{N}p(x_{i}|\mu_{k},&space;\sigma^2_{k})}}" title="\sigma_{k} = \sqrt{\frac{\sum_{i=1}^{N}p(x_{i}|\mu_{k}, \sigma^2_{k})(x_{i}-\mu_{k})^2}{\sum_{i=1}^{N}p(x_{i}|\mu_{k}, \sigma^2_{k})}}" /></a>
+</p>
+
