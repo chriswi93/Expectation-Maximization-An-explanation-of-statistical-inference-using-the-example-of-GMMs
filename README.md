@@ -52,7 +52,7 @@ In the next step the model parameters (&Mu; and &sigma;) are updated. The prior 
 The updated value for &Mu; is the weighted average of all data points <i>x<sub>i</sub></i> that are assigned to cluster <i>k</i>. Similar the updated value for &sigma; is also computed by using the probabilities as weights.
 
 <h2>Example</h2>
-Let's assume we observe the data points x=[3,4.5]. We assume <i>K</i>=2 with a prior cluster assignment &Phi;=[0.5, 0.5].
+Let's assume we observe the data points x=[3,4.5]. We set <i>K</i>=2 with a prior cluster assignment &Phi;=[0.5, 0.5].
 The initial values for &Mu; and &sigma; are:
 
 &Mu; = [2,5] 
@@ -80,7 +80,7 @@ Next step is to normalize the densities to compute the probability values (E-Ste
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;p(x_{1},\mu_{2},\sigma^2_{2})=\frac{0.5*0.05}{0.5*0.24&space;&plus;&space;0.5*0.05}=0.17" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;p(x_{1},\mu_{2},\sigma^2_{2})=\frac{0.5*0.05}{0.5*0.24&space;&plus;&space;0.5*0.05}=0.17" title="p(x_{1},\mu_{2},\sigma^2_{2})=\frac{0.5*0.05}{0.5*0.24 + 0.5*0.05}=0.17" /></a>
 </p>
 
-We also compute it for data point 2:
+We also compute the probability values for data point 2:
 
 <p>
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;p(x_{2},\mu_{1},\sigma^2_{1})=0.05" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;p(x_{2},\mu_{1},\sigma^2_{1})=0.05" title="p(x_{2},\mu_{1},\sigma^2_{1})=0.05" /></a>
@@ -90,7 +90,7 @@ We also compute it for data point 2:
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;p(x_{2},\mu_{2},\sigma^2_{2})=0.95" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;p(x_{2},\mu_{2},\sigma^2_{2})=0.95" title="p(x_{2},\mu_{2},\sigma^2_{2})=0.95" /></a>
 </p>
 
-Last step is to update the model parameters (M-Step):
+Last step is to update the model parameters (M-Step). These are the new estimates after the first iteration:
 <p>
   <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\mu_{1}&space;=&space;\frac{0.83*3&plus;0.05*4.5}{0.83&plus;0.0.05}=3.09" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\mu_{1}&space;=&space;\frac{0.83*3&plus;0.05*4.5}{0.83&plus;0.05}=3.09" title="\mu_{1} = \frac{0.83*3+0.05*4.5}{0.83+0.0.05}=3.09" /></a>
 </p>
@@ -106,3 +106,5 @@ Last step is to update the model parameters (M-Step):
 <p>
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\sigma_{2}&space;=&space;\sqrt{\frac{0.17*(3-5)^2&plus;0.95*(4.5-5)^2}{0.18&plus;0.95}}=0.82" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\sigma_{2}&space;=&space;\sqrt{\frac{0.17*(3-5)^2&plus;0.95*(4.5-5)^2}{0.18&plus;0.95}}=0.82" title="\sigma_{2} = \sqrt{\frac{0.17*(3-5)^2+0.95*(4.5-5)^2}{0.18+0.95}}=0.82" /></a>
 </p>
+
+In practice the E-Step and M-Step are repeated several times. It is guaranteed that the parameters converge to a stationary point.
