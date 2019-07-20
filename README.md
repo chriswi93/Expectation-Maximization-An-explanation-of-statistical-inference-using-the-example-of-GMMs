@@ -90,5 +90,19 @@ We also compute it for data point 2:
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;p(x_{2},\mu_{2},\sigma^2_{2})=0.95" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;p(x_{2},\mu_{2},\sigma^2_{2})=0.95" title="p(x_{2},\mu_{2},\sigma^2_{2})=0.95" /></a>
 </p>
 
-Last step is to perform the update operations for the model parameters (M-Step):
+Last step is to update the model parameters (M-Step):
+<p>
+  <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\mu_{1}&space;=&space;\frac{0.83*3&plus;0.05*4.5}{0.83&plus;0.0.05}=3.09" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\mu_{1}&space;=&space;\frac{0.83*3&plus;0.05*4.5}{0.83&plus;0.05}=3.09" title="\mu_{1} = \frac{0.83*3+0.05*4.5}{0.83+0.0.05}=3.09" /></a>
+</p>
 
+<p>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\mu_{2}&space;=&space;\frac{0.17*3&plus;0.95*4.5}{0.17&plus;0.95}=4.27" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\mu_{2}&space;=&space;\frac{0.17*3&plus;0.95*4.5}{0.17&plus;0.95}=4.27" title="\mu_{2} = \frac{0.17*3+0.95*4.5}{0.17+0.95}=4.27" /></a>
+</p>
+
+<p>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\sigma_{1}&space;=&space;\sqrt{\frac{0.83*(3-2)^2&plus;0.05*(4.5-2)^2}{0.83&plus;0.05}}=1.14" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\sigma_{1}&space;=&space;\sqrt{\frac{0.83*(3-2)^2&plus;0.05*(4.5-2)^2}{0.83&plus;0.05}}=1.14" title="\sigma_{1} = \sqrt{\frac{0.83*(3-2)^2+0.05*(4.5-2)^2}{0.83+0.05}}=1.14" /></a>
+</p>
+
+<p>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\sigma_{2}&space;=&space;\sqrt{\frac{0.17*(3-5)^2&plus;0.95*(4.5-5)^2}{0.18&plus;0.95}}=0.82" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\sigma_{2}&space;=&space;\sqrt{\frac{0.17*(3-5)^2&plus;0.95*(4.5-5)^2}{0.18&plus;0.95}}=0.82" title="\sigma_{2} = \sqrt{\frac{0.17*(3-5)^2+0.95*(4.5-5)^2}{0.18+0.95}}=0.82" /></a>
+</p>
