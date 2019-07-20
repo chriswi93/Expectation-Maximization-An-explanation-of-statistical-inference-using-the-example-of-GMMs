@@ -52,7 +52,7 @@ In the next step the model parameters (&Mu; and &sigma;) are updated. The prior 
 The updated value for &Mu; is the weighted average of all data points <i>x<sub>i</sub></i> that are assigned to cluster <i>k</i>. Similar the updated value for &sigma; is also computed by using the probabilities as weights.
 
 <h2>Example</h2>
-Let's assume we observe the data points x=[3,8]. We assume <i>K</i>=2 with a prior cluster assignment &Phi;=[0.5, 0.5].
+Let's assume we observe the data points x=[3,4.5]. We assume <i>K</i>=2 with a prior cluster assignment &Phi;=[0.5, 0.5].
 The initial values for &Mu; and &sigma; are:
 
 &Mu; = [2,5] 
@@ -67,17 +67,28 @@ The density for data point 1 assuming cluster 1 generated it:
 The density for data point 1 assuming cluster 2 generated it:
 
 <p>
-<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;N(3,\mu_{2},\sigma^2_{2})=N(3,5,1)=0,05" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;N(3,\mu_{2},\sigma^2_{2})=N(3,5,1)=0,05" title="N(3,\mu_{2},\sigma^2_{2})=N(3,5,1)=0,05" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;N(3,\mu_{2},\sigma^2_{2})=N(3,5,1)=0,05" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;N(3,\mu_{2},\sigma^2_{2})=N(3,5,1)=0,05" title="N(3,\mu_{2},\sigma^2_{2})=N(3,5,1)=0.05" /></a>
 </p>
 
-Next step is to normalize the densities to get probability values:
+Next step is to normalize the densities to compute the probability values (E-Step):
 
 <p>
-<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;p(x_{1},\mu_{1},\sigma^2_{1})=\frac{0,5*0,24}{0,5*0,24&space;&plus;&space;0,5*0,05}=0,83" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;p(x_{1},\mu_{1},\sigma^2_{1})=\frac{0,5*0,24}{0,5*0,24&space;&plus;&space;0,5*0,05}=0,83" title="p(x_{1},\mu_{1},\sigma^2_{1})=\frac{0,5*0,24}{0,5*0,24 + 0,5*0,05}=0,83" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;p(x_{1},\mu_{1},\sigma^2_{1})=\frac{0.5*0.24}{0.5*0.24&space;&plus;&space;0.5*0.05}=0.83" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;p(x_{1},\mu_{1},\sigma^2_{1})=\frac{0.5*0.24}{0.5*0.24&space;&plus;&space;0.5*0.05}=0.83" title="p(x_{1},\mu_{1},\sigma^2_{1})=\frac{0.5*0.24}{0.5*0.24 + 0.5*0.05}=0.83" /></a>
 </p>
 
 <p>
-<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;p(x_{1},\mu_{2},\sigma^2_{2})=\frac{0,5*0,05}{0,5*0,24&space;&plus;&space;0,5*0,05}=0,17" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;p(x_{1},\mu_{2},\sigma^2_{2})=\frac{0,5*0,05}{0,5*0,24&space;&plus;&space;0,5*0,05}=0,17" title="p(x_{1},\mu_{2},\sigma^2_{2})=\frac{0,5*0,05}{0,5*0,24 + 0,5*0,05}=0,17" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;p(x_{1},\mu_{2},\sigma^2_{2})=\frac{0.5*0.05}{0.5*0.24&space;&plus;&space;0.5*0.05}=0.17" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;p(x_{1},\mu_{2},\sigma^2_{2})=\frac{0.5*0.05}{0.5*0.24&space;&plus;&space;0.5*0.05}=0.17" title="p(x_{1},\mu_{2},\sigma^2_{2})=\frac{0.5*0.05}{0.5*0.24 + 0.5*0.05}=0.17" /></a>
 </p>
 
+We also compute it for data point 2:
+
+<p>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;p(x_{2},\mu_{1},\sigma^2_{1})=0.05" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;p(x_{2},\mu_{1},\sigma^2_{1})=0.05" title="p(x_{2},\mu_{1},\sigma^2_{1})=0.05" /></a>
+</p>
+
+<p>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;p(x_{2},\mu_{2},\sigma^2_{2})=0.95" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;p(x_{2},\mu_{2},\sigma^2_{2})=0.95" title="p(x_{2},\mu_{2},\sigma^2_{2})=0.95" /></a>
+</p>
+
+Last step is to perform the update operations for the model parameters (M-Step):
 
