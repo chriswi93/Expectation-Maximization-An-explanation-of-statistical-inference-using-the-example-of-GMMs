@@ -4,7 +4,7 @@ Clustering forms a group of unsupervised learning algorithms that are designed f
 
 In this article the Expectation Maximization algorithm is explained and discussed in simple words as a fundamental principal of statistical inference. Afterwards an implementation of the concept is presented in Python using the example of univariate Gaussian Mixture Models. The article is written for researchers and practitioners with a fundamental understanding of Machine Learning and Statistics.
 
-<h2>EM Clustering</h2>
+<h2>Model</h2>
 EM Clustering is a method to adress the issue of hard assignment. It adds the statistical assumption that every data point <i>x<sub>i</sub></i> is randomly drawn from a distribution. In Gaussian Mixture Models the underlying assumption is a normal distribution. Therefore, every cluster <i>k<sub>i</sub></i> out of <i>K</i> clusters equals a normal distribution with mean &mu;<sub>k</sub>. For simplicity the variance &sigma;<sup>2</sup> is set to 1. Blei et al. (2016) formally write:
 
 <p align="center">
@@ -21,7 +21,7 @@ EM Clustering is a method to adress the issue of hard assignment. It adds the st
 
 <i>K</i> is a hyperparameter of the model and determines the number of clusters which is fixed. A <b>hyperparameter</b> is a constant that has to be defined before inferring the model parameters. Usually a hyperparameter does not change during training. However, a <b>model parameter</b> is not known before. It has to be estimated during inference. In many cases model parameters are randomly initialized. <b>x</b> is the observed data which depends on cluster assignment <i>z<sub>i</sub></i> and the mean &Mu;. <b>&Phi;</b> is a <i>K</i> dimensional vector of a categorial distribution. It encodes the prior probability assumption that a data point <i>x<sub>i</sub></i> was generated from a certain cluster <i>z<sub>i</sub></i>. This is also a hyperparameter. For simplicity it is set to <i>&Phi;<sub>k</sub> = 1/K</i> for <i>k &isin; K</i>. 
 
-<h2>Optimization</h2>
+<h2>EM Clustering</h2>
 
 The algorithm optimizes the probability that every <i>x<sub>i</sub></i> is assigned to cluster <i>z<sub>i</sub></i> with a overall high likelihood of the model parameters given the observed data <i>p(&Phi;|x)</i>. A very important condition of the Expectation Maximization algorithm is that the <b>probability density function (pdf)</b> of the a posteriori distribution is known and available in closed form. This is one of many aspects that differentiates Expectation Maximization from Variational Inference. The probability density function of the posterior distribution in univariate Gaussian Mixture Models is the probability density function of the univariate normal distribution: 
 <p align="center">
@@ -56,4 +56,39 @@ In the next step the model parameters (&Mu; and &sigma;) are updated. The prior 
 </p>
 
 The updated value for &Mu; is the weighted average of all data points <i>x<sub>i</sub></i> that are assigned to cluster <i>k</i>. Similar the updated value for &sigma; is also computed by using the probabilities as weights.
+
+<h2>Example</h2>
+Let's assume we observe the following data points:
+
+| x     |
+| ----- |
+| 3     |
+| 8     |
+
+The prior of cluster assignment &Phi; for <i>K</i>=2 is:
+
+| Cluster 1    | Cluster 2    |
+| ------------ |:------------:|
+| 0.5          | 0.5          |
+
+The initial values for &Mu; and &sigma; are:
+
+&Mu; = [2,5] 
+&sigma; = [1,1]
+
+The density for data point 1 assuming cluster 1 generated it:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;N(3,\mu_{1},\sigma^2_{1})=N(3,2,1)=0,24" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;N(3,\mu_{1},\sigma^2_{1})=N(3,2,1)=0,24" title="N(3,\mu_{1},\sigma^2_{1})=N(3,2,1)=0,24" /></a>
+
+The density for data point 1 assuming cluster 2 generated it:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;N(3,\mu_{1},\sigma^2_{1})=N(3,5,1)=0,05" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;N(3,\mu_{1},\sigma^2_{1})=N(3,5,1)=0,05" title="N(3,\mu_{1},\sigma^2_{1})=N(3,5,1)=0,05" /></a>
+
+Next step is to normalize the densities to get probability values:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;p(x_{1},\mu_{1},\sigma^2_{1})=\frac{0,5*0,24}{0,5*0,24&space;&plus;&space;0,5*0,05}=0,83" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;p(x_{1},\mu_{1},\sigma^2_{1})=\frac{0,5*0,24}{0,5*0,24&space;&plus;&space;0,5*0,05}=0,83" title="p(x_{1},\mu_{1},\sigma^2_{1})=\frac{0,5*0,24}{0,5*0,24 + 0,5*0,05}=0,83" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;p(x_{1},\mu_{2},\sigma^2_{2})=\frac{0,5*0,05}{0,5*0,24&space;&plus;&space;0,5*0,05}=0,17" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;p(x_{1},\mu_{2},\sigma^2_{2})=\frac{0,5*0,05}{0,5*0,24&space;&plus;&space;0,5*0,05}=0,17" title="p(x_{1},\mu_{2},\sigma^2_{2})=\frac{0,5*0,05}{0,5*0,24 + 0,5*0,05}=0,17" /></a>
+
+
 
