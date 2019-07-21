@@ -120,5 +120,5 @@ In practice both steps are repeated several times. It is guaranteed that the par
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;log(p(x|\mu,&space;\sigma^2))&space;=&space;-1.81" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;log(p(x|\mu,&space;\sigma^2))&space;=&space;-1.81" title="log(p(x|\mu, \sigma^2)) = -1.81" /></a>
 </p>
 
-It turns out the likelihood is increasing. That means the model with the updated model paramters after the first iteration has more likely generated the observed data. Therefore, the algorithm works as expected and the model is getting better.
+It turns out the likelihood is increasing. That means the model after the first iteration has more likely generated the observed data. Therefore, the algorithm works as expected and the model is getting better.
 
