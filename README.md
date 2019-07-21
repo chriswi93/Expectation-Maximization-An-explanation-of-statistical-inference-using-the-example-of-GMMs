@@ -1,4 +1,4 @@
-<h1>Expectation Maximization - A simple explanation of statistical parameter inference using the example of a Gaussian Mixture Models</h1>
+<h1>Expectation Maximization - A simple explanation of statistical inference using the example of a Gaussian Mixture Models</h1>
 
 Clustering forms a group of unsupervised learning algorithms that are designed for finding unknown patterns in data. It is a fundamental part for many researches and practitioners working with data. K-Means is one of the best known and easiest clustering methods used today. The algorithm uses hard assignment to assign a data point to exactly one cluster. However, the lack of in-between assignment often leads to issues regarding overlapping clusters. 
 
