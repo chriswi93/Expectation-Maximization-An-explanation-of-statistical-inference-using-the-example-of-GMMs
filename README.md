@@ -59,6 +59,8 @@ The initial values are:
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;\mu&space;=&space;[2,5],&space;\sigma&space;=&space;[1,1],&space;\phi&space;=&space;[0.5,&space;0.5],&space;K&space;=&space;2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;\mu&space;=&space;[2,5],&space;\sigma&space;=&space;[1,1],&space;\phi&space;=&space;[0.5,&space;0.5],&space;K&space;=&space;2" title="\mu = [2,5], \sigma = [1,1], \phi = [0.5, 0.5], K = 2" /></a>
 </p>
 
+<img src="model.png" />
+
 The density for data point 1 is (assuming cluster 1 generated it):
 
 <p>
