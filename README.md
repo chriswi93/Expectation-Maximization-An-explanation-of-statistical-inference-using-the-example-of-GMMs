@@ -113,7 +113,7 @@ Last step is to update the model parameters (M-Step). These are the new estimate
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;\sigma_{2}&space;=&space;\sqrt{\frac{0.17*(3-5)^2&plus;0.95*(4.5-5)^2}{0.18&plus;0.95}}=0.82" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;\sigma_{2}&space;=&space;\sqrt{\frac{0.17*(3-5)^2&plus;0.95*(4.5-5)^2}{0.18&plus;0.95}}=0.82" title="\sigma_{2} = \sqrt{\frac{0.17*(3-5)^2+0.95*(4.5-5)^2}{0.18+0.95}}=0.82" /></a>
 </p>
 
-In practice both steps are repeated several times. It is guaranteed that the model parameters converge to a stationary point. Let's evaluate the convergence of the model. Therefore, we compute the log likelihood before and after the first iteration:
+In practice both steps are repeated several times. It is guaranteed that the model parameters converge to a stationary point. Let's evaluate the convergence of the model. Therefore, we compute the overall log likelihood before and after the first iteration:
 
 <p>
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;log(p(x|\mu,&space;\sigma^2))&space;=&space;-2.46" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;log(p(x|\mu,&space;\sigma^2))&space;=&space;-2.46" title="log(p(x|\mu, \sigma^2)) = -2.46" /></a>
