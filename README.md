@@ -134,5 +134,7 @@ In practice both steps are repeated several times. It is guaranteed that the mod
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;log(p(x|\mu,&space;\sigma))&space;=&space;-1.81" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;log(p(x|\mu,&space;\sigma))&space;=&space;-1.81" title="log(p(x|\mu, \sigma)) = -1.81" /></a>
 </p>
 
-It turns out that the log likelihood is increasing which lets us conclude it is more likely that the estimated model after the first iteration has generated the observed data. Therefore, the algorithm works as expected and the model is getting better. I hope you enjoyed reading this article and got a good understanding of the Expectation Maximization algorithm.
+It turns out that the log likelihood is increasing which lets us conclude it is more likely that the estimated model after the first iteration has generated the observed data. Therefore, the algorithm works as expected and the model is getting better. 
+
+I hope you enjoyed reading this article and got a better understanding of the Expectation Maximization algorithm.
 
