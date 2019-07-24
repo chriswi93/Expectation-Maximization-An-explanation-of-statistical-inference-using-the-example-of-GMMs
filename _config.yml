@@ -1,5 +1,5 @@
 theme: jekyll-theme-cayman
-title: Gaussian Mixture Model parameter inference using Expectation Maximization
+title: Expectation Maximization - An explanation of statistical inference using the example of Gaussian Mixture Models
 mathjax: true
 layout: post
 categories: github jekyll
