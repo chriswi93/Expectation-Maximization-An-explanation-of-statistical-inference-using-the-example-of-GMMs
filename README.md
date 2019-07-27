@@ -1,6 +1,7 @@
 <h1>Expectation Maximization - An explanation of statistical inference using the example of Gaussian Mixture Models</h1>
 <p align="left" style="font-size:14px;"><b>Christoph Winkler</b><br>
-<i>M. Sc. Business Information Systems, Data Scientist</i></p>
+<i>M. Sc. Business Information Systems, Data Scientist<br>
+Generative Modeling is about modeling "How the world could be" and not necessarily "How the world actually is".</i></p>
 
 Clustering forms a group of unsupervised learning algorithms that are designed to find unknown patterns in data. It is one of the fundamental methods for many researches and practitioners working with data. The k-means clustering algorithm is one of the best known and simpliest clustering methods used today. The algorithm assigns each data point to exactly one cluster. This is called hard assignment. However, the lack of in-between assignment often leads to issues regarding overlapping clusters. Additionally, k-means ignores the variance of the clusters and therefore it can happen that the algorithm does not work well with different cluster sizes.
 
