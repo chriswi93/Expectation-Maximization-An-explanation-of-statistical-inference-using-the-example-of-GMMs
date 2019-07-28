@@ -139,5 +139,5 @@ In practice both steps are repeated several times. It is guaranteed that the mod
 
 It turns out that the log likelihood is increasing which lets us conclude it is more likely that the estimated model after the first iteration has generated the observed data. Therefore, the algorithm works as expected and the model is getting better. 
 
-I hope you enjoyed reading this article and got a better understanding of the Expectation Maximization algorithm.
+I hope you enjoyed reading this article and got a better understanding of the Expectation Maximization algorithm. As a next step, please  go on to read <a href="https://chriswi93.github.io/Expectation-Maximization-A-Python-implementation/">Expectation Maximization - A Python implementation</a>.
 
